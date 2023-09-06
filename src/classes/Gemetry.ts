@@ -1,4 +1,4 @@
-import { Circle, Figure, Square, Triangle } from './TodoList'
+import { Circle, Figure, Square, Triangle } from './Figures'
 
 export class Geometry {
   constructor (private figure: Figure) {}
@@ -16,6 +16,6 @@ const geom1 = new Geometry(cuadrado)
 const geom2 = new Geometry(triangulo)
 const geom3 = new Geometry(circulo)
 
-console.log(geom1.area)
-console.log(geom2.area)
-console.log(geom3.area)
+console.log(geom1.area())
+console.log(geom2.area())
+console.log(geom3.area())
