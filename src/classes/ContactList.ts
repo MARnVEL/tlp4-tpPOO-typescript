@@ -11,15 +11,63 @@ export class ContactList {
         return Math.max(...arrayIds) + 1
     }
 
-    addTodo (contact: Contact) {
+    addContact (contact: Contact) {
         this.contacts.push(contact)
     }
 
-    getTodos () {
+    getContacts () {
         return this.contacts
     }
 
-    deleteTodo (id: number) {
+    deleteContact (id: number) {
         this.contacts = this.contacts.filter(contact => contact.id !== id)
     }
+
+    findContact (text: string) {
+        const contact = this.contacts.filter(contact => contact.nombre === text)
+        console.log('Contactos del find: ', contact)
+
+        if (contact.length > 0) {
+            console.log(`Se encontró un contacto con el nombre ${text}`, contact)
+        } else {
+            console.log(`No existe contacto con el nombre ${text}`)
+        }
+    }
 }
+
+// Instancio una nueva lista de contactos:
+const myContactList = new ContactList()
+
+// Creamos un nuevo contacto:
+const contacto1: Contact = {
+    id: myContactList.generarId(),
+    nombre: 'Martín',
+    eMail: 'martin@mail.com',
+    nroTelefono: '123456786'
+}
+// Añadimos el primer contacto:
+myContactList.addContact(contacto1)
+
+// Creamos un nuevo contacto:
+const contacto2: Contact = {
+    id: myContactList.generarId(),
+    nombre: 'Cairos',
+    eMail: 'cairos@mail.com',
+    nroTelefono: '123456786'
+}
+// Añadimos el segundo contacto:
+myContactList.addContact(contacto2)
+
+// Creamos un nuevo contacto:
+const contacto3: Contact = {
+    id: myContactList.generarId(),
+    nombre: 'Tulio',
+    eMail: 'tulio@mail.com',
+    nroTelefono: '123456786'
+}
+// Añadimos el tercer contacto:
+myContactList.addContact(contacto3)
+
+// Mostramos nuestra lista de tareas:
+console.log('Lista de contactos: ', myContactList.getContacts())
+myContactList.findContact("Martín")
