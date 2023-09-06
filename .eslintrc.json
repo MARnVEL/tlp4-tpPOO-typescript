@@ -15,7 +15,10 @@
                 "project": "./tsconfig.json"
             },
             "rules": {
-                "no-useless-constructor": "off"
+                "no-useless-constructor": "off",
+                "quotes":"off",
+                "indent":"off"
+
             }
         }
     ],

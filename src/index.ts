@@ -1,5 +1,5 @@
 import './classes/Gemetry'
-// import { Circle, Square, Triangle } from './classes/TodoList'
+import './classes/TodoList'
 
 function main () {}
 
