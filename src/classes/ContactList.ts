@@ -71,3 +71,7 @@ myContactList.addContact(contacto3)
 // Mostramos nuestra lista de tareas:
 console.log('Lista de contactos: ', myContactList.getContacts())
 myContactList.findContact("Martín")
+
+myContactList.deleteContact(2)
+
+console.log('Lista de contactos: ', myContactList.getContacts())
