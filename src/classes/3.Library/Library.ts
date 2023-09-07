@@ -77,6 +77,10 @@ export class Library {
         if (availableBook.length > 1 && availableBook[0].getQuantity() > 0) {
             bookToBorrow.decreaseQuantity()
             // Instanciar la clase BookToBorrow y crear un nuevo objeto libro para prestar y luego añadirlo a la lista boorrowedBooks.
+            const id: number = bookToBorrow.getId()
+            const name: string = bookToBorrow.getName()
+            const author: string = bookToBorrow.getAuthor()
+            const newAbailableBook = new BookToBoroow(id, name, author, true)
 
             // this.borrowedBooks.push(bookToBorrow)
         }
