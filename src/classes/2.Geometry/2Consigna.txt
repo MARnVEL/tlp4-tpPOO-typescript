@@ -1,0 +1,5 @@
+2. *Calculadora de Geometría:*
+Desarrolla una calculadora de geometría en la que los alumnos puedan definir clases para
+formas geométricas como círculos, rectángulos y triángulos. Cada clase podría tener métodos
+para calcular áreas y perímetros. Esto les permitirá practicar el uso de interfaces, herencia y
+polimorfismo.

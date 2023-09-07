@@ -11,6 +11,14 @@ export class Book {
         return this.id
     }
 
+    getName (): string {
+        return this.name
+    }
+
+    getAuthor () : string {
+        return this.author
+    }
+
     getQuantity (): number {
         return this.quantity
     }
@@ -23,17 +31,29 @@ export class Book {
         return this.quantity++
     }
 }
-export class BookToBoroow extends Book {
-    private borrowed: boolean
+
+export class BookToBoroow {
     constructor (
-        id: number,
-        name: string,
-        author: string,
-        quantity: number,
-        borrowed: boolean
-    ) {
-        super(id, name, author, quantity)
-        this.borrowed = borrowed
+        private id: number,
+        private name: string,
+        private author: string,
+        private borrowed: boolean
+    ) {}
+
+    getId (): number {
+        return this.id
+    }
+
+    getName (): string {
+        return this.name
+    }
+
+    getAuthor () : string {
+        return this.author
+    }
+
+    getBorrowed () : boolean {
+        return this.borrowed
     }
 }
 /*
