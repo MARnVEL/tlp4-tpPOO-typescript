@@ -1,12 +1,15 @@
 
-import { Book } from "./Book"
+import { Book, BookToBoroow } from "./Book"
 
 export class Library {
+    // Lista de libros en posesión de la biblioteca
+    private booksInPossession: Book[] = []
+
     // Lista de libros disponibles
     private borrowedBooks: Book[] = []
 
     // Lista de libros prestados
-    private availableBooks: Book[] = []
+    private availableBooks: BookToBoroow[] = []
 
     // Lista de todos los libros que posee la biblioteca
     private books: Book[] = []
@@ -14,7 +17,7 @@ export class Library {
     constructor (private name: string) {}
 
     generarId (): number {
-        const arrayIds = this.books.map(book => book.id)
+        const arrayIds = this.books.map(book => book.getId())
         if (!arrayIds.length) {
             arrayIds.push(0)
         }
@@ -26,10 +29,10 @@ export class Library {
         console.log('Libro agregado corrrectamente! ')
     };
 
-    publishBook (book: Book) {
+    /* publishBook (book: Book) {
         this.availableBooks.push(book)
-    }
-
+    } */
+    /*
     borrowBook (bookToBoroow: Book) {
         const availableBook: Book[] = this.availableBooks.filter(book => book.name === bookToBoroow.name)
 
@@ -37,19 +40,18 @@ export class Library {
             bookToBoroow.quantity =
             this.borrowedBooks.push(bookToBoroow)
         }
-    }
+    } */
 }
 
 const myLibrary = new Library('Babel')
 
-const book1: Book = {
-    id: myLibrary.generarId(),
-    author: 'J. J. H.',
-    name: 'Just another book',
-    borrowed: false,
-    quantity: 10
-}
+const book1: Book = new Book(
+    myLibrary.generarId(),
+    'J. J. H.',
+    'Just another book',
+    10
+)
 
 myLibrary.addBook(book1)
-myLibrary.borrowBook(book1)
+// myLibrary.borrowBook(book1)
 console.log('Hola')

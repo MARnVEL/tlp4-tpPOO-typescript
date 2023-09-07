@@ -1,0 +1,5 @@
+3. *Biblioteca Virtual*
+Crea un sistema de biblioteca virtual en el que los alumnos puedan definir una clase
+'Libro' con propiedades como título, autor, etc. Implementa métodos para prestar y 
+devolver libros, y lleva un registro de lisbros disponibles y prestados. Esto les permitirá
+manejar la encapsulación y el manejo de objetos.
