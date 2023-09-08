@@ -63,7 +63,7 @@ export class Library {
         return this.availableBooks
     }
 
-    borrowBook (bookToBorrow: Book): BookToBoroow | void {
+    borrowBook (bookToBorrow: Book): BookToBoroow {
         // console.log('El libro del borrowBook(): ', bookToBorrow)
 
         // Me fijo si el libro está disponible
@@ -92,8 +92,9 @@ export class Library {
             return newBookToBorrow
         } else if (availableBook.length === 0) {
             console.log(`El libro ${bookToBorrow} no está disponible para ser prestado`)
+
             // TODO: Lógica para consultar si el libro existe en el catálogo. Es decir, que el libro no está disponible para prestar, pero la biblioteca sí posee ejemplares para consultar presencialmente o aún no han sido puestos en la lista de libros disponibles para prestar.
-            const id: number = myLibrary.generateIdBorrowedBooks() // !No sé si esto está bien
+            const id: number = myLibrary.generateIdBorrowedBooks() // TODO: No sé si esto está bien
             const name: string = bookToBorrow.getName()
             const author: string = bookToBorrow.getAuthor()
             const newBookToBorrow = new BookToBoroow(id, name, author, false)
@@ -106,10 +107,21 @@ export class Library {
             const newBookToBorrow = new BookToBoroow(id, name, author, false)
             return newBookToBorrow
         }
+
+        console.log(`Actualmente, la biblioteca no posee el libro ${bookToBorrow}, y no se encuentra ni para prestar ni en el catálogo general.`)
+        const id: number = myLibrary.generateIdBorrowedBooks() // !No sé si esto está bien
+        const name: string = bookToBorrow.getName()
+        const author: string = bookToBorrow.getAuthor()
+        const newBookToBorrow = new BookToBoroow(id, name, author, false)
+        return newBookToBorrow
     }
 
-    returnBook (bookToReturn: BookToBoroow) {
-
+    returnBook (bookToReturn: BookToBoroow): BookToBoroow {
+        const boorrowedBookInList = this.borrowedBooks.filter(book => {
+            return book.getId() === bookToReturn.getId()
+        })
+        console.log('Log del returnBook(). boorrowedBookList: ', boorrowedBookInList)
+        return boorrowedBookInList[0]
     }
 }
 
@@ -154,3 +166,7 @@ console.log('Segundo libro prestado: ', borrowedBook2)
 console.log('Listado de libros prestados: ', myLibrary.getBorrowedBooks())
 // Vemos cómo queda la lista de libros disponibles:
 console.log('Listado de libros disponibles: ', myLibrary.getAvailableBooks())
+
+// Devolvemos un libro:
+const returnedBook = myLibrary.returnBook(borrowedBook1)
+console.log('Libro devuelto: ', returnedBook)
