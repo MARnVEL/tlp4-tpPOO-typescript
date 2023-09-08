@@ -117,10 +117,26 @@ export class Library {
     }
 
     returnBook (bookToReturn: BookToBoroow): BookToBoroow {
+        // Busco el libro en la lista de libros prestados
         const boorrowedBookInList = this.borrowedBooks.filter(book => {
             return book.getId() === bookToReturn.getId()
         })
-        console.log('Log del returnBook(). boorrowedBookList: ', boorrowedBookInList)
+        // console.log('Log del returnBook(). boorrowedBookList: ', boorrowedBookInList)
+
+        if (boorrowedBookInList.length === 1) {
+            // Elimino el libro de la lista de libros prestados
+            this.borrowedBooks = this.borrowedBooks.filter(book => book.getId() !== bookToReturn.getId())
+
+            // Aumento en uno la cantidad de ejemplares disponibles del libro devuelto.
+            for (const book of this.availableBooks) {
+                if (book.getName() === bookToReturn.getName() && book.getAuthor() === bookToReturn.getAuthor()) {
+                    book.increaseQuantity()
+                }
+            }
+        } else {
+            console.log('El libro que desea devolver no existe en la lista de libros prestados 🤨')
+            return bookToReturn
+        }
         return boorrowedBookInList[0]
     }
 }
@@ -170,3 +186,6 @@ console.log('Listado de libros disponibles: ', myLibrary.getAvailableBooks())
 // Devolvemos un libro:
 const returnedBook = myLibrary.returnBook(borrowedBook1)
 console.log('Libro devuelto: ', returnedBook)
+
+// Vemos cómo queda la lista de libros disponibles:
+console.log('Listado de libros disponibles: ', myLibrary.getAvailableBooks())
