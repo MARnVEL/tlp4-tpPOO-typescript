@@ -37,7 +37,7 @@ const myGarden = new Garden('Neverland')
 
 const perro1 = new Pet('Ramón', 25, 'Tangible')
 const kyogin = new Pet('Arnaldo', 200, 'Ethereal')
-const acelga = new Pet('Fatmaghul', 60, 'EtherealAndTangibe')
+const acelga = new Pet('Fatmaghul', 60, 'EtherealAndTangible')
 const kuro = new Pet('Lucía', 385, 'Ethereal')
 
 myGarden.addPet(kyogin)
