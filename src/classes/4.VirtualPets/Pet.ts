@@ -7,13 +7,13 @@ enum Kind {
 }
 */
 
-type Kind = "Ethereal" | "Tangible" | "EtherealAndTangibe"
+type KindType = "Ethereal" | "Tangible" | "EtherealAndTangibe"
 
 export class Pet {
     constructor (
         private name: string,
         private happinesLevel: number,
-        private kind: Kind
+        private kind: KindType
     ) {}
 
     getName (): string {

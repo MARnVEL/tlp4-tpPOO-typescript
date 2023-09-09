@@ -57,7 +57,7 @@ export class BookToBoroow {
     }
 }
 /*
-export interface Book {
+export interface IBook {
     id: number;
     name: string;
     author: string;

@@ -1,7 +1,7 @@
-import { Todo } from "./Todo"
+import { ITodo } from "./Todo"
 
 export class TodoList {
-    private todos: Todo[] = []
+    private todos: ITodo[] = []
     generarId (): number {
         const arrayIds = this.todos.map(todo => todo.id)
         if (!arrayIds.length) {
@@ -10,7 +10,7 @@ export class TodoList {
         return Math.max(...arrayIds) + 1
     }
 
-    addTodo (todo: Todo) {
+    addTodo (todo: ITodo) {
         this.todos.push(todo)
     }
 
@@ -36,7 +36,7 @@ export class TodoList {
 const myList = new TodoList()
 
 // Creamos una nueva tarea:
-const tarea1: Todo = {
+const tarea1: ITodo = {
     id: myList.generarId(),
     title: 'Mi primer tarea.',
     done: false,
@@ -46,7 +46,7 @@ const tarea1: Todo = {
 myList.addTodo(tarea1)
 
 // Creamos una nueva tarea:
-const tarea2: Todo = {
+const tarea2: ITodo = {
     id: myList.generarId(),
     title: 'Mi segunda tarea.',
     done: false,
@@ -56,7 +56,7 @@ const tarea2: Todo = {
 myList.addTodo(tarea2)
 
 // Creamos una nueva tarea:
-const tarea3: Todo = {
+const tarea3: ITodo = {
     id: myList.generarId(),
     title: 'Mi tercer tarea.',
     done: false,
@@ -75,7 +75,7 @@ myList.deleteTodo(2)
 console.log('Lista de tareas: ', myList.getTodos())
 
 // Creamos una nueva tarea:
-const tarea4: Todo = {
+const tarea4: ITodo = {
     id: myList.generarId(),
     title: 'Mi cuarta tarea.',
     done: false,

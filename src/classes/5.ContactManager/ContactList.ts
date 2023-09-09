@@ -1,7 +1,7 @@
-import { Contact } from "./Contact"
+import { IContact } from "./Contact"
 
 export class ContactList {
-    private contacts: Contact[] = []
+    private contacts: IContact[] = []
 
     generarId (): number {
         const arrayIds = this.contacts.map(contact => contact.id)
@@ -11,7 +11,7 @@ export class ContactList {
         return Math.max(...arrayIds) + 1
     }
 
-    addContact (contact: Contact) {
+    addContact (contact: IContact) {
         this.contacts.push(contact)
     }
 
@@ -39,7 +39,7 @@ export class ContactList {
 const myContactList = new ContactList()
 
 // Creamos un nuevo contacto:
-const contacto1: Contact = {
+const contacto1: IContact = {
     id: myContactList.generarId(),
     nombre: 'Martín',
     eMail: 'martin@mail.com',
@@ -49,7 +49,7 @@ const contacto1: Contact = {
 myContactList.addContact(contacto1)
 
 // Creamos un nuevo contacto:
-const contacto2: Contact = {
+const contacto2: IContact = {
     id: myContactList.generarId(),
     nombre: 'Cairos',
     eMail: 'cairos@mail.com',
@@ -59,7 +59,7 @@ const contacto2: Contact = {
 myContactList.addContact(contacto2)
 
 // Creamos un nuevo contacto:
-const contacto3: Contact = {
+const contacto3: IContact = {
     id: myContactList.generarId(),
     nombre: 'Tulio',
     eMail: 'tulio@mail.com',

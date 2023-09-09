@@ -1,4 +1,4 @@
-export interface Contact {
+export interface IContact {
     id: number;
     nombre: string;
     eMail: string;

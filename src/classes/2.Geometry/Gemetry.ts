@@ -1,7 +1,7 @@
-import { Circle, Figure, Square, Triangle } from './Figures'
+import { Circle, IFigure, Square, Triangle } from './Figures'
 
 export class Geometry {
-  constructor (private figure: Figure) {}
+  constructor (private figure: IFigure) {}
 
   area () {
     return this.figure.getArea()
