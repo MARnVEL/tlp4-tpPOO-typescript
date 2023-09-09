@@ -7,7 +7,7 @@ enum Kind {
 }
 */
 
-type Kind = "Ethereal" | "Tangible" | "EtherealAndTangible"
+type Kind = "Ethereal" | "Tangible" | "EtherealAndTangibe"
 
 export class Pet {
     constructor (

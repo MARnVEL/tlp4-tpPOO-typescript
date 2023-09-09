@@ -1,10 +1,5 @@
-import { Pet } from "./Pet"
 
-enum Kind {
-    Ethereal = 'Ethereal',
-    Tangible = 'Tangible',
-    EtherealAndTangible = 'EtherealAndTangibe'
-}
+import { Pet } from "./Pet"
 
 export class Garden {
     private thePets: Pet[] = []
@@ -14,6 +9,10 @@ export class Garden {
     addPet (pet: Pet) {
         this.thePets.push(pet)
         console.log('Mascota agregada correctamente! ')
+    }
+
+    getPets () {
+        return this.thePets
     }
 
     feed (pet: Pet) {
@@ -36,12 +35,23 @@ export class Garden {
 
 const myGarden = new Garden('Neverland')
 
-const perro1 = new Pet('Ramón', 25, Kind.Tangible)
+const perro1 = new Pet('Ramón', 25, 'Tangible')
+const kyogin = new Pet('Arnaldo', 200, 'Ethereal')
+const acelga = new Pet('Fatmaghul', 60, 'EtherealAndTangibe')
+const kuro = new Pet('Lucía', 385, 'Ethereal')
 
+myGarden.addPet(kyogin)
+myGarden.addPet(acelga)
 myGarden.addPet(perro1)
+myGarden.addPet(kuro)
 
+console.log('Lista de mascotas: ', myGarden.getPets())
 console.log('Mascota sin alimentar: ', perro1)
 
 myGarden.feed(perro1)
 
 console.log('Mascota alientada: ', perro1)
+
+console.log(perro1.getHappinesLevel())
+
+console.log('Lista de mascotas: ', myGarden.getPets())
