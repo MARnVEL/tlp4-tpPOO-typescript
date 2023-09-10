@@ -13,7 +13,6 @@
                <img width="100" style="margin: 10" title='JavaScript' src='https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png'>
          </a>
       </span>
-      <br/>
       <span>
          <a href="https://www.typescriptlang.org/" target="_blank" title='TypeScript'>
                <img width="100" style="margin: 10" title='TypeScript' src='https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Typescript.svg/800px-Typescript.svg.png?20230616215448'>
