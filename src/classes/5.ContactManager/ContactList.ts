@@ -70,7 +70,12 @@ myContactList.addContact(contacto3)
 
 // Mostramos nuestra lista de tareas:
 console.log('Lista de contactos: ', myContactList.getContacts())
+
+// Buscamos un contacto por nombre:
 myContactList.findContact("Martín")
+
+// Buscamos un contacto que sabemos que no existe:
+myContactList.findContact("Luffy")
 
 myContactList.deleteContact(2)
 
